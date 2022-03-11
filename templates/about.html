@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title%}
+About Us
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="{{url_for('static',filename='static_images/first.png')}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tags Part</h5>
+        <p class="card-text">The YOLOV4 model has been used in the application which takes in an image and outputs all the elements,it identifies from the image, as tags..</p>
+        <p class="card-text">There are 80 different element tags.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{{url_for('static',filename='static_images/second.png')}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Reverse Image Search</h5>
+        <p class="card-text">This uses the ResNet50 model to take in an image and searches for similar images in its dataset and outputs the similar images.</p>
+        <p class="card-text">The Dataset contains roughly 37000 images.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{{url_for('static',filename='static_images/third.png')}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Flask</h5>
+        <p class="card-text">Flask has been used as the backend Web Framework for this project.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="/" class="btn btn-danger btn-lg mt-4 mb-4">Back</a>
+</div>
+{% endblock %}

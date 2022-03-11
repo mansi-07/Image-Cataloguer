@@ -1,0 +1,7 @@
+*.pyc
+yolov4.cfg
+yolov4.weights.txt
+feature_list.csv
+coco.names.txt
+cataloguer
+.ipynb_checkpoints
