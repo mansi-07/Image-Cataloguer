@@ -57,6 +57,18 @@ def home_page():
     return render_template('homepage2.html',form=form)
 
 
+@app.route('/display/<tag>')
+def display(tag):
+    try:
+        arr=os.listdir(f'C:/Users/Aneesh Kulkarni/web_dev/flask projects/web page for yolo/cataloguer/{tag}')
+        imgs=[]
+        for i in range(20):
+            imgs.append(arr[i])
+        res=1
+        return render_template('display.html',tag=tag,imgs=imgs,res=res)
+    except:
+        res=0
+        return render_template('display.html',res=res)
 @app.route('/about')
 def about_page():
     return render_template('about.html')

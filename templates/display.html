@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Images
+{% endblock %}
+
+{% block content%}
+
+    {% if res==0%}
+    <h1>No images found in Dataset</h1>
+    {% endif %}
+    {% for img in imgs%}
+    <img src="" alt="{{tag}}">
+    {% endfor%}
+{% endblock %}
