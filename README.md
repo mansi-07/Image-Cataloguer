@@ -5,11 +5,15 @@ It takes in an image as the input and stores it in the static/input folder.
 The model takes the input from the input folder and outputs the images in the static/pics folder.
 All the images present in the output folder are then dispalyed on the web page.
 
-Before running the yolo.py the files feature_list.csv,coco.names, yolov4.cfg ,yolov4.weights must be present in the folder.(same level as yolo.py)
+The Yolo model prints out the elements present in the images(Elements are selected from a class of 80 objects).
 
-The cataloguer dataset must also be present in the folder.
+Also the dominant colors present in the image are displayed as tags along with the element tags.
 
-The notebook has also been included.(image cataloguer3).
+Before running the yolo.py the files feature_list.pkl,coco.names, yolov4.cfg ,yolov4.weights must be present in the folder.(same level as yolo.py)
+
+The cataloguer dataset must be present in the **static folder**.(in the same level as inputs/ and pics/).
+
+The notebook has also been included.(image cataloguer3 and colors).
 
 Commands to run the app-
 open the terminal and cd into this folder and type-
