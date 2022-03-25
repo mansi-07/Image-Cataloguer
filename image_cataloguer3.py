@@ -26,6 +26,7 @@ def full_model():
     import numpy as np
     import cv2
     import os
+    import pickle as pkl
 
 
     # In[3]:
@@ -33,7 +34,7 @@ def full_model():
 
     IMG_SIZE = 224
     BATCH = 64
-    root_dir =r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\cataloguer'
+    root_dir =r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\static\cataloguer'
     input_dir =r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\static\input\target'
 
 
@@ -76,12 +77,13 @@ def full_model():
     # In[8]:
 
 
-    file=open('feature_list.csv')
-    feature_list=np.loadtxt(file,delimiter=',')
-    print(feature_list)
-    file.close()
+    # file=open('feature_list.csv')
+    # feature_list=np.loadtxt(file,delimiter=',')
+    # print(feature_list)
+    # file.close()
 
-
+    with open('feature_list.pkl', 'rb') as f:
+        feature_list = pkl.load(f)
     # In[9]:
 
 
@@ -105,7 +107,7 @@ def full_model():
     pca = PCA(.95)
     pca.fit(stan_feature_list)
     new_feature_list=pca.transform(stan_feature_list)
-    print(new_feature_list.shape)
+    # print(new_feature_list.shape)
 
 
     # In[8]:
@@ -121,8 +123,8 @@ def full_model():
     # In[12]:
 
 
-    print("Total images   = ", len(datagen.classes))
-    print("Shape of feature_list = ", new_feature_list.shape)
+    # print("Total images   = ", len(datagen.classes))
+    # print("Shape of feature_list = ", new_feature_list.shape)
 
 
     # In[13]:
@@ -202,7 +204,7 @@ def full_model():
         #PATH=get_random_image_from_dataset()
         img_input = cv2.imread(path)
         blob = cv2.dnn.blobFromImage(img_input,1/255,(512,512),swapRB = True, crop=False)
-        classesFile = r'C:\Users\Aneesh Kulkarni\Desktop\coco.names.txt'
+        classesFile = r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\coco.names.txt'
         with open(classesFile) as f:
             classes=[line.strip() for line in f]
         net= cv2.dnn.readNetFromDarknet(r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\yolov4.cfg.txt',r'C:\Users\Aneesh Kulkarni\web_dev\flask projects\web page for yolo\yolov4.weights')
@@ -240,10 +242,10 @@ def full_model():
         for index in indices:
             if plotnumber<=len(indices) :
                 ax = plt.subplot(4,6,plotnumber)
-                print(filenames[index])
+                # print(filenames[index])
                 plt.imshow(mpimg.imread(filenames[index])) 
                 plt.xlabel(filenames[index] + 'Similar Image'+str(index)+'\n')
-                print(" Cosine Similarity value")
+                # print(" Cosine Similarity value")
                 similarity_value(img_features,index)
                 path=filenames[index] 
                 
@@ -263,12 +265,12 @@ def full_model():
                 file=os.path.join(folder, path)
                 img = cv2.imread(path) 
                 os.chdir(folder) 
-                print("Before saving")   
-                print(os.listdir(folder))
+                # print("Before saving")   
+                # print(os.listdir(folder))
                 filename = str(index)+'.jpg'
                 cv2.imwrite(filename, img) 
-                print("After saving")  
-                print(os.listdir(folder))
+                # print("After saving")  
+                # print(os.listdir(folder))
                 plotnumber+=1
         plt.tight_layout()
 
@@ -283,7 +285,7 @@ def full_model():
             similar_img_features=extract_features(similar_img_path)
             similarity = 1 - spatial.distance.cosine(img_features,similar_img_features)
             rounded_similarity = int((similarity * 10000)) / 10000.0
-            print(similarity,rounded_similarity) 
+            # print(similarity,rounded_similarity) 
 
 
     # In[33]:
@@ -294,10 +296,10 @@ def full_model():
         global img_features
         img_features = extract_features(img_path)#features of the random input image 
         #img_features=get_random_image_from_dataset()
-        print(img_features.shape)
+        # print(img_features.shape)
         _,indices = neighbors.kneighbors(img_features) # indices of images with similar features
-        print(indices.shape)
-        print(indices[0])
+        # print(indices.shape)
+        # print(indices[0])
         # plt.imshow(mpimg.imread(img_path))
         # plt.xlabel(img_path)
         # plt.show()

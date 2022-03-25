@@ -34,4 +34,15 @@ Images
         {% endfor %}
     </div>
 </div>
+<div class="container mb-2">
+    <div class="my-container border border-dark rounded">
+        {% for tag in c_tags %}
+        <div class="col-sm-2 my-1">
+            <div class="card-body">
+                <a href="/display/color/{{tag}}"><button class="btn btn-primary btn-lg">{{tag}}</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

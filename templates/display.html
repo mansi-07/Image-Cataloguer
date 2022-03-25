@@ -5,11 +5,17 @@ Images
 {% endblock %}
 
 {% block content%}
-
     {% if res==0%}
     <h1>No images found in Dataset</h1>
     {% endif %}
+    {% if res==1 %}
+    <h1 class="text-center">Some images of {{tag}}</h1>
+    {% endif %}
+    <div class="my-container">
     {% for img in imgs%}
-    <img src="" alt="{{tag}}">
+    <div class="card-body">
+        <img src="{{url_for('static',filename='cataloguer/{0}'.format(img))}}" alt="">
+    </div>
     {% endfor%}
+    </div>
 {% endblock %}

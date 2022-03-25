@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Images
+{% endblock %}
+
+{% block content%}
+ <h2 class="text-center">Images which have the color {{tag}}</h2>
+<div class="my-container">
+    {% for img in imgs%}
+    <div class="card-body">
+        <img src="{{url_for('static',filename='pics/{0}'.format(img))}}" alt="">
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}
