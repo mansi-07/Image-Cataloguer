@@ -37,10 +37,10 @@ flask run
 
 
 
-Dataset:(https://www.kaggle.com/rahulxd/image-cataloguer/)
+**Dataset**:https://www.kaggle.com/rahulxd/image-cataloguer/
 
-Link for COCO.Names used:(https://drive.google.com/file/d/1YWagPmrNetdgydR3z7rqr_d9ABvkboQW/view?usp=sharing)
+**Link for COCO.Names used**:https://drive.google.com/file/d/1YWagPmrNetdgydR3z7rqr_d9ABvkboQW/view?usp=sharing
 
-Reverse Image Search Model:(https://www.kaggle.com/salonimathur16/notebook86698da377)
+**Reverse Image Search Model**:https://www.kaggle.com/salonimathur16/notebook86698da377
 
-Yolo Model:(https://www.kaggle.com/aneesh2002/yolov4-project)
+**Yolo Model**:https://www.kaggle.com/aneesh2002/yolov4-project
