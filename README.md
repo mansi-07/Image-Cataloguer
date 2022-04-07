@@ -38,4 +38,8 @@ flask run
 
 **Reverse Image Search Model**: https://www.kaggle.com/salonimathur16/notebook86698da377
 
-**Yolo Model**: https://www.kaggle.com/aneesh2002/yolov4-project
+**YoloV4 Model**: https://www.kaggle.com/aneesh2002/yolov4-project
+
+**YoloV4 Weights**: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+
+**YoloV4 Config**: https://github.com/kiyoshiiriemon/yolov4_darknet/blob/master/cfg/yolov4.cfg
