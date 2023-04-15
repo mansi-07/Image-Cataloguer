@@ -1,4 +1,8 @@
 # Image Cataloguer
+
+**Link to the demo video**: https://drive.google.com/file/d/1s3wXK24q9n8KMSAwcZYbZpToDVXKcUJ3/view?usp=sharing
+
+
 This project was done under the **Crypt** Special Interest Group of **ISTE-NITK**. 
 This is the web interface which helps you interact with the image cataloguer model.
 
